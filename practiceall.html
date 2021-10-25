@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice for js</title>
+   
+    
+</head>
+<body>
+    <h1 id="name">this is sharif</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <section>
+        <h1 id="Main-tag">This is new Paragraph</h1>
+        <article>
+            <h2>Number-1</h2>
+            <div class="h3">article-1</div>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorum libero reiciendis illum ipsam, sequi ipsa optio suscipit enim quo!</p>
+        </article>
+        <article>
+            <h2>Number-2</h2>
+            <div title='this is h3 width"50px"' class="h3">article-2</div>
+            <p class="description">Obcaecati nemo, eos possimus accusamus recusandae, cupiditate dolorem eligendi adipisci animi voluptas tenetur amet? Exercitationem esse placeat laboriosam nulla officia.</p>
+        </article>
+        <article>
+            <h2 id="sharif">Number-3</h2>
+            <div class="h3">article-3</div>
+            <p class="description">Officiis, incidunt. Tenetur fugiat non sint expedita impedit placeat praesentium laboriosam? Facere error maiores rerum unde quos quibusdam sapiente dolor!</p>
+        </article>
+        <article>
+            <ul id="link">
+                <li>link-1</li>
+                <li>link-2</li>
+                <li>link-3</li>
+                <li>link-4</li>
+
+            </ul>
+            <button>click here</button>
+           
+        </article>
+        <article>
+            <p>click the button for on</p>
+            <img id="myImage" style="width: 100px;" src="images/download.jpg" alt="">
+            <button onclick="document.getElementById('myImage').src='images/download.jpg'"> turn on the light</button>
+        </article>
+    </section>
+    
+
+   <script>
+       var first=document.getElementById('name');
+       first.style.backgroundImage='linear-gradient(indianred, gray, green)';
+       first.style.fontSize='25px';
+       first.style.color='yellow';
+       first.style.borderRadius='30px';
+       first.style.boxSizing='border-box';
+       first.style.boxShadow='5px 5px 20px gray';
+       first.style.padding='12px';
+       first.style.margin='12px';
+       first.style.width='250px';
+       first.style.display='flex';
+       first.style.justifyContent='center';
+       first.style.alignContent='center';
+       first.style.position='relative';
+       first.style.borderTop='50px';
+       
+       var second=document.getElementsByClassName('h3');
+          for(var i=0; i<second.length; i++){
+              var element=second[i];
+              element.setAttribute('title', 'this is all element');
+              element.innerText='lekhok-' +(i+1);
+              element.style.backgroundColor='yellow';
+              element.style.border='1px solid red';
+              element.style.borderRadius='15px';
+              element.fontSize='32px';
+              element.style.textAlign='center';
+              element.style.width='80px';
+              element.style.position='absolate';
+              element.style.marginLeft='50%';
+
+
+          }
+        //   document.querySelector('.h3').setAttribute('title','this is querry selector');
+          document.body.style.backgroundImage='linear-gradient(indianred, gray, green)';
+          const article=document.getElementById('Main-tag');
+          const newParagraph=document.createElement('p');
+          newParagraph.innerHTML='this is new paragraph';
+          article.appendChild(newParagraph);
+          var newItem=document.getElementById('link');
+          var newLine=document.createElement('li');
+          newLine.innerText='this is new link';
+          newItem.appendChild(newLine);
+          document.getElementById('link').parentNode;
+
+     
+          
+
+   </script>
+</body>
+</html>

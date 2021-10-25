@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        body{
+            margin: 50px;
+            padding: 0%;
+        }
+       .area-name{
+           text-align: center;
+           
+       }
+       #submit-area{
+           margin-top: 50px;
+           margin-left: 50px;
+           margin-right: 50px;
+           box-shadow: 5px 5px 10px gray;
+           padding: 15px;
+           border-radius:15px;
+       }
+       #new-area{
+           display: none;
+       }
+       .part1{
+           background-color: indianred;
+       }
+       .part2{
+           background-color: lawngreen;
+       }
+       .part3{
+           background-color: green;
+       }
+       .part1, .part2, .part3{
+           padding: 20px 15px;
+           border-radius: 15px;
+       }
+       .cat1, .cat2{
+           box-shadow: 5px 5px 10px gray;
+           border-radius: 10px;
+           margin-top: 40px;
+           padding: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div id="Login-area">
+        <h1 class="area-name">Welcome to international Bank</h1>
+        <div id="submit-area">
+            <h4>Login</h4>
+            <input type="text" class="form-control">
+            <br>
+            <input type="password" class="form-control">
+            <br>
+            <button id="link" class="btn btn-primary">Enter</button>
+
+        </div>
+
+    </div>
+    <div id="new-area">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="part1">
+                    <h4>Deposit</h4>
+                <h1>$ <span id="currentDeposit">00</span></h1>
+
+                </div>
+                
+                
+
+            </div>
+            <div class="col-md-4">
+                <div class="part2">
+                    <h4>Withdrow</h4>
+                <h1>$ <span id="currentWithdrow">00</span></h1>
+
+                </div>
+                
+
+            </div>
+            <div class="col-md-4 ">
+                <div class="part3">
+                    <h4>Balance</h4>
+                <h1>$ <span id="currentBalance"> 1200</span></h1>
+
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="cat1">
+                    <h3>Deposit</h3>
+            <br>
+            <input id="depositAmount" type="text" class="form-control" placeholder="$ amount you want to deposit">
+            <br>
+            <button id="depositBtn" class="btn btn-primary">Deposit</button>
+            </div>
+            </div>
+
+                
+                
+
+           
+            
+
+         <div class="col-md-6">
+             <div class="cat2">
+                <h3>Withdrow</h3>
+                <br>
+                <input id="withdrowAmount" type="text" class="form-control" placeholder="$ amount you want to withdrow">
+                <br>
+                <button id="withdrowBtn" class="btn btn-primary">Withdrow</button>
+
+             </div>
+            
+            
+
+         </div>
+            
+       
+        
+    </div>
+
+    <script>
+        document.getElementById('link').addEventListener('click',function(){
+            document.getElementById('Login-area').style.display='none';
+        })
+        document.getElementById('link').addEventListener('click',function(){
+            document.getElementById('new-area').style.display='block';
+        })
+        //deposit handler button
+        document.getElementById('depositBtn').addEventListener('click',function(){
+            const depositAmount=document.getElementById('depositAmount').value;
+            const depositNumber=parseFloat(depositAmount);
+
+            // const currentDeposit= document.getElementById('currentDeposit').innerText;
+            // const currentDepositNumber=parseFloat(currentDeposit);
+            // const totalDeposit=depositNumber+currentDepositNumber;
+            // document.getElementById('currentDeposit').innerText=totalDeposit;
+            updateSpanText('currentDeposit', depositNumber);
+            updateSpanText('currentBalance', depositNumber);
+
+            // const currentBalance =document.getElementById('currentBalance').innerText;
+            // const currentBalanceNumber=parseFloat(currentBalance);
+            // const totalBalance=depositNumber+currentBalanceNumber;
+            // document.getElementById('currentBalance').innerText=totalBalance;
+            document.getElementById('depositAmount').value='';
+
+        })
+        function updateSpanText(id,depositNumber){
+            const current= document.getElementById(id).innerText;
+            const currentNumber=parseFloat(id);
+            const totalNumber=depositNumber+currentNumber;
+            
+            document.getElementById(id).innerText=totalNumber;
+
+        }
+
+
+
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
